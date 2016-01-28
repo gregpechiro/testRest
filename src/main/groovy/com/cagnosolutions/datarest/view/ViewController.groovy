@@ -8,19 +8,17 @@ import com.cagnosolutions.datarest.view.template.Template
 import com.cagnosolutions.datarest.view.template.TemplateService
 import groovy.transform.CompileStatic
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
-/**
- * Created by greg on 2/12/15.
- */
-
 @CompileStatic
 @RestController
 @RequestMapping("/view")
+@CrossOrigin(allowedHeaders = ["Content-Type", "x-requested-with"], origins = ["*"], methods = [RequestMethod.OPTIONS, RequestMethod.POST, RequestMethod.GET])
 class ViewController {
 	
 	@Autowired
